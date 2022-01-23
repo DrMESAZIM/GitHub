@@ -25,9 +25,6 @@ body{
     filter: drop-shadow(3px 3px 15px black);
     padding: 2em;
 
-    @media (max-width: 580px){
-        width: 80%;
-    }
     h1{
         color: white;
     }
@@ -53,4 +50,10 @@ body{
         }
     }
 
+}
+
+@media (max-width: 580px){
+    .container{
+        width: 80%;
+    }
 }

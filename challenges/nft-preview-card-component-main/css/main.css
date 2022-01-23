@@ -20,12 +20,13 @@ body {
   position: fixed;
   right: 0;
   bottom: 0;
-  margin: .5rem;
-  padding: .5rem;
+  margin: .2rem;
+  padding: .2rem;
   border-radius: 5em;
   color: var(--s-blue);
-  background-color: rgba(0, 0, 0, 0.3);
   font-size: .8rem;
+  -webkit-filter: opacity(40%);
+          filter: opacity(40%);
 }
 
 .attribution p {
@@ -36,6 +37,12 @@ body {
   text-decoration: none;
   color: var(--cyan);
   background-color: transparent;
+}
+
+@media (max-width: 400px) {
+  .attribution {
+    right: 10rem;
+  }
 }
 
 .attribution a:hover {
@@ -101,8 +108,7 @@ body {
 }
 
 .afterimg {
-  width: 19rem;
-  height: 19rem;
+  width: 100%;
   cursor: pointer;
   position: relative;
 }
@@ -110,13 +116,6 @@ body {
 .afterimg:hover::after {
   -webkit-filter: opacity(100%);
           filter: opacity(100%);
-}
-
-@media only screen and (min-width: 1440px) {
-  .afterimg {
-    width: 20rem;
-    height: 20rem;
-  }
 }
 
 .afterimg::after {
