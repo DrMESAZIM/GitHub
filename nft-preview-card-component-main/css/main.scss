@@ -1,0 +1,128 @@
+:root{
+    --cyan: hsl(178, 100%, 50%);
+    --s-blue: hsl(215, 51%, 70%);
+    --bg-color: hsl(217, 54%, 11%);
+    --bg-card: hsl(216, 50%, 16%);
+    --line-color: hsl(215, 32%, 27%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit';
+}
+body{
+    background: var(--bg-color);
+}
+.attribution {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 5em;
+    color:var(--s-blue);
+    background-color: rgba(0,0,0,0.3);
+    font-size: .8rem;
+    p{
+        background-color: transparent;
+    }
+    a{
+        text-decoration: none;
+        color: var(--cyan);
+        background-color: transparent;
+    }
+}
+.flex{
+    display: flex;
+    flex-direction: column;
+}
+.card-container{
+    background-color: var(--bg-card);
+    padding: 2rem;
+    margin: 3rem auto;
+    width: 80%;
+    height: fit-content;
+    border-radius: .7rem;
+    max-width: 300px;
+    max-height: 540px;
+    
+    .nft-img{
+        width: 19rem;
+        height: 19rem;
+        align-self: center;
+        object-fit: cover;
+        border-radius: .5em;
+    }
+}
+.details{
+    margin: 1.5rem auto;
+    position: relative;
+    &::after{
+        content: ' ';
+        width: 100%;
+        height: 1px;
+        position: absolute;
+        background: var(--line-color);
+        bottom: -20px;
+    }
+}
+.title-desc{
+    h1{
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: white;
+    }
+    p{
+        color: var(--s-blue);
+        margin: 1rem auto;
+        font-size: 1.1rem;
+        font-weight: 300;
+        line-height: 1.8rem;
+    }
+}
+.about-nft{
+    flex-direction: row;
+    justify-content: space-between;
+    .eth-price{
+        color: var(--cyan);
+        font-weight: 800;
+        position: relative;
+        margin-left: 1.1rem;
+        &::before{
+            content: url(../images/icon-ethereum.svg);
+            position: absolute;
+            left: -17px;
+            bottom: -3px;
+        }
+    }
+    .days-left{
+        color: var(--s-blue);
+        position: relative;
+        &::before{
+            content: url(../images/icon-clock.svg);
+            position: absolute;
+            left: -25px;
+            bottom: -3px;
+        }
+    }
+}
+.creator{
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 0;
+
+    img{
+        width: 35px;
+        height: 35px;
+        border: 1px solid white;
+        border-radius: 100%;
+    }
+    p{
+        margin-left: 1rem;
+        color:var(--s-blue);
+        font-weight: 300;
+        span{
+            color: white;
+        }
+    }
+}
