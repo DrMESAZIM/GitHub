@@ -141,14 +141,20 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   pointer-events: none;
-  left: 0;
-  top: 0;
+  left: 7rem;
+  top: 8.5rem;
   right: 0;
   bottom: 0;
   -webkit-filter: opacity(0);
           filter: opacity(0);
   -webkit-transition: .2s;
   transition: .2s;
+}
+
+@media only screen and (min-width: 1440px) {
+  .afterimg::after {
+    top: 7rem;
+  }
 }
 
 .details {
