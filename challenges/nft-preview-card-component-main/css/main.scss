@@ -71,7 +71,7 @@ body{
         filter: opacity(100%);
     }
     @media only screen and (min-width: 1440px){
-        height: 15rem;
+        padding-top: 0;
     }
 }
 .color-img{
@@ -100,9 +100,10 @@ body{
     width: fit-content;
     height: fit-content;
     pointer-events: none;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    left:0;
+    top:0;
+    right: 0;
+    bottom: 0;
     filter: opacity(0);
     transition: .2s;
 }
@@ -133,6 +134,9 @@ body{
         &:hover{
             color: var(--cyan);
         }
+        @media only screen and (min-width: 1440px){
+            margin-top: 0;
+        }
     }
     p{
         color: var(--s-blue);
@@ -141,6 +145,7 @@ body{
         font-weight: 300;
         line-height: 1.8rem;
     }
+    
 }
 .about-nft{
     flex-direction: row;
@@ -193,6 +198,9 @@ body{
                 color: var(--cyan);
             }
         }
+    }
+    @media only screen and (min-width: 1440px){
+        margin-bottom: 0;
     }
 }   
 .focus-visible-only:focus-visible{

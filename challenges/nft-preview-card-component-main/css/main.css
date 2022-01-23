@@ -103,7 +103,7 @@ body {
 
 @media only screen and (min-width: 1440px) {
   .afterimg {
-    height: 15rem;
+    padding-top: 0;
   }
 }
 
@@ -141,10 +141,10 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   pointer-events: none;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
   -webkit-filter: opacity(0);
           filter: opacity(0);
   -webkit-transition: .2s;
@@ -184,6 +184,12 @@ body {
 
 .title-desc h1:hover {
   color: var(--cyan);
+}
+
+@media only screen and (min-width: 1440px) {
+  .title-desc h1 {
+    margin-top: 0;
+  }
 }
 
 .title-desc p {
@@ -265,6 +271,12 @@ body {
 
 .creator p a:hover {
   color: var(--cyan);
+}
+
+@media only screen and (min-width: 1440px) {
+  .creator {
+    margin-bottom: 0;
+  }
 }
 
 .focus-visible-only:focus-visible {
