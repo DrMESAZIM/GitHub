@@ -128,6 +128,7 @@ body {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  pointer-events: none;
   left: 50%;
   top: 50%;
   -webkit-transform: translate(-50%, -50%);
