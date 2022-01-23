@@ -80,6 +80,7 @@ body{
     height: 19rem;
     cursor: pointer;
     position: relative;
+    pointer-events: none;
     &:hover::after{
         filter: opacity(100%);
     }
