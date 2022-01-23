@@ -80,7 +80,7 @@ body {
 
 @media only screen and (min-width: 1440px) {
   .card-container {
-    margin-top: 13rem;
+    margin-top: 10rem;
     max-width: 20rem;
     max-height: -webkit-fit-content;
     max-height: -moz-fit-content;
