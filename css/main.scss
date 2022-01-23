@@ -36,24 +36,29 @@ body{
 
     li{
         list-style: none;
-        border-left: 2px solid var(--cyan);
         padding-left: .5em;
+        margin-bottom: 1em;
         a{
             text-decoration: none;
+            border-left: 2px solid var(--cyan);
             color: var(--cyan);
-            font-weight: 300;
+            font-weight: 400;
+            padding: .3em;
+            border-radius: .5em;
             &:hover{
-                font-weight: 400;
-                border-radius: .1em;
-                background: linear-gradient(15deg, var(--cyan) -30%, transparent ,transparent);
+                background: var(--bg-color);
+                opacity: 40%;
             }
         }
     }
 
 }
+a:focus-visible{
+    outline: 1px solid cyan;
+}
 
 @media (max-width: 580px){
     .container{
-        width: 80%;
+        width: 80%; 
     }
 }
