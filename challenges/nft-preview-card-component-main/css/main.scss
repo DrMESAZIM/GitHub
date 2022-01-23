@@ -52,13 +52,13 @@ body{
     background-color: var(--bg-card);
     padding: 1.5rem;
     width: 80%;
-    height: fit-content;
+    height: 40rem;
     border-radius: .7rem;
     max-width: 300px;
     max-height: 530px;
     filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.486));
     @media only screen and (min-width: 1440px){
-        max-width: 320px;
+        max-width: 310px;
         max-height: 550px;
     }
 
@@ -79,13 +79,18 @@ body{
     &:hover{
         filter: opacity(50%);
     }
+
 }
 .afterimg{
     width: 100%;
+    height: 18rem;
     cursor: pointer;
     position: relative;
     &:hover::after{
         filter: opacity(100%);
+    }
+    @media only screen and (min-width: 1440px){
+        height: 19rem;
     }
 }
 .afterimg::after{
@@ -160,7 +165,7 @@ body{
 .creator{
     flex-direction: row;
     align-items: center;
-    padding: 1rem 0;
+    padding-top: .8rem;
 
     img{
         width: 35px;
