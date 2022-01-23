@@ -24,17 +24,17 @@ body{
     position: relative;
     width: 15em;
     height: 26em;
-    margin-top: 22vh;
+    margin-top: 7rem;
     background: white;
     border-radius: 1em;
     padding: .8em;
-    transform: scale(1.3);
+    transform: scale(1);
     @media (min-width: 375px){
-        margin-top: 10rem;
+        margin-top: 7rem;
         margin-bottom: 10rem;
     }
     @media (min-width: 1400px){
-        margin-top: 15rem;
+        margin-top: 13rem;
         margin-bottom: 15rem;
     }
 
