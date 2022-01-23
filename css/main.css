@@ -33,6 +33,12 @@ body {
   padding: 2em;
 }
 
+@media (max-width: 580px) {
+  .container {
+    width: 80%;
+  }
+}
+
 .container h1 {
   color: white;
 }
