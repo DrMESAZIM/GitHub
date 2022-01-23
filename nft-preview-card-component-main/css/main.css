@@ -38,6 +38,10 @@ body {
   background-color: transparent;
 }
 
+.attribution a:hover {
+  color: var(--line-color);
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -49,9 +53,13 @@ body {
 }
 
 .card-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   background-color: var(--bg-card);
-  padding: 2rem;
-  margin: 3rem auto;
+  padding: 1.5rem;
   width: 80%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -59,17 +67,75 @@ body {
   border-radius: .7rem;
   max-width: 300px;
   max-height: 530px;
+  -webkit-filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.486));
+          filter: drop-shadow(1px 1px 20px rgba(0, 0, 0, 0.486));
 }
 
-.card-container .nft-img {
+@media only screen and (min-width: 1440px) {
+  .card-container {
+    max-width: 320px;
+    max-height: 550px;
+  }
+}
+
+.color-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: .6em;
+  background-color: var(--cyan);
+  z-index: -1;
+}
+
+.nft-img {
+  width: 100%;
+  height: 100%;
+  border-radius: .5em;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.nft-img:hover {
+  -webkit-filter: opacity(50%);
+          filter: opacity(50%);
+}
+
+.afterimg {
   width: 19rem;
   height: 19rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: .5em;
+  cursor: pointer;
+  position: relative;
+}
+
+.afterimg:hover::after {
+  -webkit-filter: opacity(100%);
+          filter: opacity(100%);
+}
+
+@media only screen and (min-width: 1440px) {
+  .afterimg {
+    width: 20rem;
+    height: 20rem;
+  }
+}
+
+.afterimg::after {
+  content: url(../images/icon-view.svg);
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-filter: opacity(0);
+          filter: opacity(0);
+  -webkit-transition: .2s;
+  transition: .2s;
 }
 
 .details {
@@ -90,6 +156,13 @@ body {
   font-size: 1.4rem;
   font-weight: 800;
   color: white;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.title-desc h1:hover {
+  color: var(--cyan);
 }
 
 .title-desc p {
@@ -162,5 +235,12 @@ body {
 
 .creator p span {
   color: white;
+  cursor: pointer;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.creator p span:hover {
+  color: var(--cyan);
 }
 /*# sourceMappingURL=main.css.map */
