@@ -54,7 +54,7 @@ img{
     .desc{
         font-size: 1.2rem;
         line-height: 2rem;
-        margin: 1rem auto .5rem;
+        margin: 1.3rem auto .2rem;
         padding: 0 .6rem;
         color: var(--clr-desaturated);
         font-weight: 500;
@@ -63,7 +63,7 @@ img{
         font-size: 1.7rem;
         color: var(--clr-dark);
         font-weight: 900;
-        margin-top: .5rem;
+        margin-top: .3rem;
     }
 }
 .card__list--plan{
@@ -79,15 +79,14 @@ img{
     height: 8vh;
     align-items: center;
     padding: 1rem;
+    margin-top: -.3rem;
     border-radius: var(--br);
     h2{
         font-size: 1.1rem;
         color: var(--clr-dark);
         font-weight: 900;
-
     }
     a{
-        
         width: max-content;
         color: var(--clr-bright);
         font-weight: 700;
