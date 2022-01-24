@@ -1,0 +1,228 @@
+:root {
+  --clr-pale: hsl(225, 100%, 94%);
+  --clr-bright: hsl(245, 75%, 52%);
+  --clr-very-pale: hsl(225, 100%, 98%);
+  --clr-desaturated: hsl(224, 23%, 55%);
+  --clr-dark: hsl(223, 47%, 23%);
+  --br: 1rem;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  font-family: 'Red Hat Display';
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background: var(--clr-pale);
+  padding-top: 5em;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img {
+  width: 100%;
+  border-top-left-radius: var(--br);
+  border-top-right-radius: var(--br);
+}
+
+.card {
+  background: white;
+  max-height: 80vh;
+  max-width: 90%;
+  width: 100%;
+  height: 100vh;
+  border-radius: var(--br);
+  -webkit-box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.251);
+          box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.251);
+}
+
+.card .card__list {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2em;
+  padding: 2em;
+}
+
+.card__list--details .desc {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin: 1rem auto .5rem;
+  padding: 0 .6rem;
+  color: var(--clr-desaturated);
+  font-weight: 500;
+}
+
+.card__list--details .title {
+  font-size: 1.7rem;
+  color: var(--clr-dark);
+  font-weight: 900;
+  margin-top: .5rem;
+}
+
+.card__list--plan {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+}
+
+.card__list--plan .flex {
+  gap: 0 2.3rem;
+  background: var(--clr-very-pale);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4rem 7rem 3rem;
+      grid-template-columns: 4rem 7rem 3rem;
+  width: 100%;
+  height: 8vh;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
+  border-radius: var(--br);
+}
+
+.card__list--plan .flex h2 {
+  font-size: 1.1rem;
+  color: var(--clr-dark);
+  font-weight: 900;
+}
+
+.card__list--plan .flex a {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  color: var(--clr-bright);
+  font-weight: 700;
+  -webkit-text-decoration-style: underline;
+          text-decoration-style: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 1px;
+}
+
+.card__list--plan .flex a:hover, .card__list--plan .flex a :focus {
+  opacity: 70%;
+  text-decoration: none;
+}
+
+.card__list--plan .flex a:hover, .card__list--plan .flex :focus {
+  opacity: 70%;
+  text-decoration: none;
+}
+
+.card__list--plan .flex a:focus {
+  outline: 2px solid var(--clr-bright);
+}
+
+.card__list--plan .flex p {
+  color: var(--clr-desaturated);
+}
+
+.card__list--plan .flex .annual-plan {
+  margin-left: -.5rem;
+  line-height: 1.7rem;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: var(--clr-bright);
+  width: 100%;
+  height: 4rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: var(--br);
+  -webkit-box-shadow: 0 1rem 2rem rgba(22, 26, 250, 0.351);
+          box-shadow: 0 1rem 2rem rgba(22, 26, 250, 0.351);
+  overflow: hidden;
+}
+
+.button a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.button a:focus {
+  background: #6a4deb;
+}
+
+.button:hover {
+  opacity: 70%;
+}
+
+.cancel-order a {
+  text-decoration: none;
+  color: var(--clr-desaturated);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.cancel-order a:hover, .cancel-order :focus {
+  color: var(--clr-dark);
+  text-decoration: none;
+}
+
+.cancel-order a:focus {
+  outline: 2px solid var(--clr-dark);
+}
+
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.attribution p {
+  color: var(--clr-desaturated);
+}
+
+.attribution a {
+  text-decoration: none;
+  color: var(--clr-dark);
+}
+
+.attribution a:hover {
+  color: var(--clr-bright);
+}
+
+.attribution a:focus {
+  outline: 2px solid var(--clr-dark);
+}
+/*# sourceMappingURL=main.css.map */
