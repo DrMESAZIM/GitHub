@@ -1,0 +1,206 @@
+:root{
+    // Primary
+    --main-bg: hsl(233, 47%, 7%);
+    --card-bg: hsl(244, 38%, 16%);
+    --clr-accent: hsl(277, 64%, 61%);
+
+    // Neutral
+    --clr-heading-stats: hsl(0, 0%, 100%);
+    --clr-paragraph: hsla(0, 0%, 100%, 0.75);
+    --clr-stat-head: hsla(0, 0%, 100%, 0.6);
+    //Fonts
+
+    --f-light: 400;
+    --f-bold: 700;
+}
+// Basic (Non-changing) values
+*{
+    font-family: 'Inter';
+    margin: 0;
+    padding: 0;
+}
+.grid{display: grid;}
+.flex{display: flex;}
+img{width: 100%;}
+ul{list-style: none;}
+.bold{font-weight: var(--f-bold);}
+p{
+    font-weight: var(--f-light);
+    font-size: 0.925rem;
+    color: var(--clr-paragraph);
+}
+h1, h2{color:var(--clr-heading-stats);}
+.stats ul li{p{color: var(--clr-stat-head);text-transform: uppercase;}}
+span{color: var(--clr-accent);}
+body{background-color: var(--main-bg);}
+.container{background-color: var(--card-bg);}
+
+// Card container ------------------------------->
+
+main{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    overflow: hidden;
+    height: 47em;
+    width: 20em;
+    border-radius: .7em;
+    display: grid;
+    grid-template-areas: 
+    'image'
+    'content'
+    ;
+    grid-template-rows: min-content;
+    gap: 2em;
+    .hero__img{
+        grid-area: image;
+        height: max-content;
+        position: relative;
+    }
+    
+}
+
+
+// Card content ---------------------------->
+img{ //A lot of time on this part ajusting the values
+    filter: 
+    contrast(70%)
+    brightness(60%)
+    opacity(60%)
+    sepia(50%)
+    saturate(1000%)
+    hue-rotate(240deg);
+}
+.content{
+    grid-area: content;
+    position: relative;
+    display: block;
+    height: 100%;
+    text-align: center;
+    padding: 0 2em;
+}
+.list-content{
+    height: 95%;
+    gap: 1em;
+    grid-template-rows: 20% 20% 50%;
+    grid-template-areas: 
+    'title'
+    'description'
+    'stats'
+    ;
+    .title{
+        grid-area: title;
+        font-size: .8em;
+    }
+    .description{
+        grid-area: description;
+        line-height: 1.4em;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .stats{
+        grid-area: stats;
+        
+    }
+}
+.stats-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 95%;
+    padding: 1em 0;
+    li h2{
+        font-size: 1.3em;
+        line-height: 1.7em;
+    }
+    li p{
+        font-size: .8em;
+        letter-spacing: .1em;
+    }
+}
+//Footer -----------
+footer{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    border-top: 1px solid var(--clr-accent);
+    background: var(--card-bg);
+    p{
+        color: var(--clr-stat-head);
+        font-size: .8em;
+    }
+    a{
+        color: var(--clr-accent);
+        text-decoration: none;
+        font-weight: var(--f-bold);
+        &:focus{
+            background: var(--clr-accent);
+            color: var(--clr-heading-stats);
+            text-transform: uppercase;
+            font-weight: var(--f-light);
+        }
+    }
+
+}
+//Meida Query
+@media (min-width: 455px){
+    .container{
+        height: 25em;
+        width: 70em;
+        grid-template-areas: 
+        'content image'
+        ;
+        grid-template-rows: 100% 100%;
+        grid-template-columns: 50% 50%;
+        gap: 0;
+        .hero__img{
+            grid-area: image;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .content{
+        grid-area: content;
+        height: 80%;
+        text-align: left;
+    }
+    .list-content{
+        padding: 4em 2em;
+        grid-template-rows: 30% 20% 35%;
+        .title{
+
+            font-size: 1.1em;
+        }
+        .description{
+            line-height: 1.4rem;
+            margin-top: 0;
+            padding-top: 0;
+            p{
+                font-size: .9em;
+                padding-right: 4em;
+            }
+        }
+    }
+    .stats-list{
+        flex-direction: row;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+        li{
+            padding-right: 2em;
+        }
+    }
+}
