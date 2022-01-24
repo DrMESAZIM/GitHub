@@ -4,7 +4,7 @@
   --clr-very-pale: hsl(225, 100%, 98%);
   --clr-desaturated: hsl(224, 23%, 55%);
   --clr-dark: hsl(223, 47%, 23%);
-  --br: 1rem;
+  --br: .7rem;
 }
 
 *,
@@ -37,21 +37,20 @@ body {
   background-size: 100vw;
 }
 
-img {
-  width: 100%;
-  border-top-left-radius: var(--br);
-  border-top-right-radius: var(--br);
-}
-
 .card {
   background: white;
-  max-height: 80vh;
-  max-width: 90%;
+  max-height: 42rem;
+  max-width: Min(90%, 25.5rem);
   width: 100%;
-  height: 100vh;
-  border-radius: var(--br);
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  margin-bottom: 5rem;
+  border-radius: 1.3rem;
   -webkit-box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.251);
           box-shadow: 0 1rem 5rem rgba(0, 0, 0, 0.251);
+  overflow: hidden;
+  position: relative;
 }
 
 .card .card__list {
@@ -64,23 +63,22 @@ img {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 2em;
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .card__list--details .desc {
-  font-size: 1.2rem;
-  line-height: 2rem;
-  margin: 1.3rem auto .2rem;
+  font-size: 1rem;
+  line-height: 1.7rem;
+  margin: 1rem auto .2rem;
   padding: 0 .6rem;
   color: var(--clr-desaturated);
   font-weight: 500;
 }
 
 .card__list--details .title {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   color: var(--clr-dark);
   font-weight: 900;
-  margin-top: .3rem;
 }
 
 .card__list--plan {
@@ -91,14 +89,14 @@ img {
 }
 
 .card__list--plan .flex {
-  gap: 0 2.3rem;
+  gap: 1rem;
   background: var(--clr-very-pale);
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 4rem 7rem 3rem;
-      grid-template-columns: 4rem 7rem 3rem;
+  -ms-grid-columns: 3rem 2fr 1fr;
+      grid-template-columns: 3rem 2fr 1fr;
   width: 100%;
-  height: 8vh;
+  height: 4rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -108,7 +106,7 @@ img {
 }
 
 .card__list--plan .flex h2 {
-  font-size: 1.1rem;
+  font-size: .9rem;
   color: var(--clr-dark);
   font-weight: 900;
 }
@@ -123,6 +121,7 @@ img {
           text-decoration-style: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 1px;
+  font-size: .8rem;
 }
 
 .card__list--plan .flex a:hover, .card__list--plan .flex a :focus {
@@ -141,11 +140,12 @@ img {
 
 .card__list--plan .flex p {
   color: var(--clr-desaturated);
+  font-size: .8rem;
 }
 
 .card__list--plan .flex .annual-plan {
-  margin-left: -.5rem;
-  line-height: 1.7rem;
+  margin-left: .3rem;
+  line-height: 1.5rem;
 }
 
 .button {
@@ -154,7 +154,7 @@ img {
   display: flex;
   background: var(--clr-bright);
   width: 100%;
-  height: 4rem;
+  height: 3.5rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -173,7 +173,7 @@ img {
   color: white;
   text-decoration: none;
   font-weight: 700;
-  font-size: 1.2rem;
+  font-size: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -194,7 +194,7 @@ img {
   text-decoration: none;
   color: var(--clr-desaturated);
   font-weight: 900;
-  font-size: 1.1rem;
+  font-size: 1rem;
 }
 
 .cancel-order a:hover, .cancel-order :focus {
@@ -207,10 +207,9 @@ img {
 }
 
 .attribution {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  position: relative;
+  display: block;
+  font-size: .8rem;
 }
 
 .attribution p {
@@ -228,5 +227,59 @@ img {
 
 .attribution a:focus {
   outline: 2px solid var(--clr-dark);
+}
+
+@media (min-width: 480px) {
+  body {
+    background-image: url(../images/pattern-background-desktop.svg);
+  }
+  .attribution {
+    font-size: 1rem;
+  }
+  .card {
+    margin-top: 1rem;
+    max-height: 43.5rem;
+    max-width: 28rem;
+  }
+  .card .card__list {
+    padding: 2.5rem 3rem 3rem 3rem;
+    gap: 1.7rem;
+    max-height: 100%;
+  }
+  .card__list--details {
+    margin-bottom: 0;
+  }
+  .card__list--details .title {
+    font-size: 1.75rem;
+    color: var(--clr-dark);
+    font-weight: 900;
+  }
+  .card__list--details .desc {
+    font-size: 1rem;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .card__list--plan .flex {
+    -ms-grid-columns: 3rem 3fr 1fr;
+        grid-template-columns: 3rem 3fr 1fr;
+    padding: .9rem 1.5rem;
+    margin: 0;
+  }
+  .card__list--plan .flex .annual-plan h2 {
+    font-size: 1.05rem;
+  }
+  .card__list--plan .flex .annual-plan p {
+    font-size: 1rem;
+  }
+  .card__list--plan .flex a {
+    font-size: .9rem;
+  }
+  .button {
+    height: 3rem;
+  }
+  .button a {
+    font-size: .95rem;
+    font-weight: 700;
+  }
 }
 /*# sourceMappingURL=main.css.map */
