@@ -71,7 +71,7 @@ body{
     display: flex;
     text-align: left;
 }
-.card__list--plan .flex{
+.card__list--plan .grid{
     gap: 1rem;
     background: var(--clr-very-pale);
     display: grid;
@@ -206,7 +206,7 @@ body{
             padding-bottom: 0;
         }
     }
-    .card__list--plan .flex{
+    .card__list--plan .grid{
         grid-template-columns: 3rem 3fr 1fr;
         padding: .9rem 1.5rem;
         margin: 0;

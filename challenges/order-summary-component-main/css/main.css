@@ -88,7 +88,7 @@ body {
   text-align: left;
 }
 
-.card__list--plan .flex {
+.card__list--plan .grid {
   gap: 1rem;
   background: var(--clr-very-pale);
   display: -ms-grid;
@@ -105,13 +105,13 @@ body {
   border-radius: var(--br);
 }
 
-.card__list--plan .flex h2 {
+.card__list--plan .grid h2 {
   font-size: .9rem;
   color: var(--clr-dark);
   font-weight: 900;
 }
 
-.card__list--plan .flex a {
+.card__list--plan .grid a {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -124,26 +124,26 @@ body {
   font-size: .8rem;
 }
 
-.card__list--plan .flex a:hover, .card__list--plan .flex a :focus {
+.card__list--plan .grid a:hover, .card__list--plan .grid a :focus {
   opacity: 70%;
   text-decoration: none;
 }
 
-.card__list--plan .flex a:hover, .card__list--plan .flex :focus {
+.card__list--plan .grid a:hover, .card__list--plan .grid :focus {
   opacity: 70%;
   text-decoration: none;
 }
 
-.card__list--plan .flex a:focus {
+.card__list--plan .grid a:focus {
   outline: 2px solid var(--clr-bright);
 }
 
-.card__list--plan .flex p {
+.card__list--plan .grid p {
   color: var(--clr-desaturated);
   font-size: .8rem;
 }
 
-.card__list--plan .flex .annual-plan {
+.card__list--plan .grid .annual-plan {
   margin-left: .3rem;
   line-height: 1.5rem;
 }
@@ -259,19 +259,19 @@ body {
     margin-bottom: 0;
     padding-bottom: 0;
   }
-  .card__list--plan .flex {
+  .card__list--plan .grid {
     -ms-grid-columns: 3rem 3fr 1fr;
         grid-template-columns: 3rem 3fr 1fr;
     padding: .9rem 1.5rem;
     margin: 0;
   }
-  .card__list--plan .flex .annual-plan h2 {
+  .card__list--plan .grid .annual-plan h2 {
     font-size: 1.05rem;
   }
-  .card__list--plan .flex .annual-plan p {
+  .card__list--plan .grid .annual-plan p {
     font-size: 1rem;
   }
-  .card__list--plan .flex a {
+  .card__list--plan .grid a {
     font-size: .9rem;
   }
   .button {
