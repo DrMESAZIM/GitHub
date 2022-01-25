@@ -106,8 +106,8 @@ body {
           transform: scaleX(1);
   -webkit-transform-origin: left;
           transform-origin: left;
-  -webkit-animation: loading-bar .7s ease-in-out;
-          animation: loading-bar .7s ease-in-out;
+  -webkit-animation: loading-bar 1s ease-out;
+          animation: loading-bar 1s ease-out;
 }
 
 @-webkit-keyframes loading {
@@ -145,6 +145,10 @@ body {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
   }
+  30% {
+    -webkit-transform: scaleX(0.7);
+            transform: scaleX(0.7);
+  }
   100% {
     -webkit-transform: scaleX(1);
             transform: scaleX(1);
@@ -155,6 +159,10 @@ body {
   0% {
     -webkit-transform: scaleX(0);
             transform: scaleX(0);
+  }
+  30% {
+    -webkit-transform: scaleX(0.7);
+            transform: scaleX(0.7);
   }
   100% {
     -webkit-transform: scaleX(1);

@@ -78,7 +78,7 @@ body{
                 left: 0;
                 transform: scaleX(1);
                 transform-origin: left;
-                animation: loading-bar .7s ease-in-out;
+                animation: loading-bar 1s ease-out;
             }
         }
     }
@@ -97,6 +97,9 @@ body{
 @keyframes loading-bar{
     0%{
         transform: scaleX(0);
+    }
+    30%{
+        transform: scaleX(.7);
     }
     100%{
         transform: scaleX(1);
