@@ -13,6 +13,112 @@
 body{
     background: var(--bg-color);
 }
+.animations--in{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    pointer-events: none;
+    z-index: 10;
+    
+
+    .anim--blue{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(83, 83, 83);
+        transform-origin: left;
+        animation-name: pagein-blue;
+        animation-duration: 600ms;
+        animation-delay: 1.6s;
+        animation-timing-function: ease-in-out;
+        position: absolute;
+        transform: scaleX(0) translateX(100%);
+        z-index: 10;
+    }
+    .anim--purple{
+        width: 100%;
+        height: 100%;
+        background-color:hsl(0, 0%, 65%);
+        transform-origin: left;
+        animation-name: pagein-purple;
+        animation-duration: 800ms;
+        animation-delay: 1.6s;
+        animation-timing-function: ease-in-out;
+        transform: scaleX(0);
+        position: absolute;
+        z-index: 10;
+    }
+    .loading{
+        position: absolute;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-color);
+        animation: loading 1.8s;
+        transform: scale(0);
+        display: grid;
+        align-items: center;
+        P{
+            text-align: center;
+            font-size: 4em;
+            width: max-content;
+            margin-inline: auto;
+            color: white;
+            position: relative;
+            &::after{
+                content: '';
+                position: absolute;
+                display: block;
+                height: 3px;
+                width: 100%;
+                border-radius: 2em;
+                background-color: white;
+                bottom: -20px;
+                left: 0;
+                transform: scaleX(1);
+                transform-origin: left;
+                animation: loading-bar .7s ease-in-out;
+            }
+        }
+    }
+}
+@keyframes loading{
+    0%{
+        transform: scale(1);
+    }
+    99%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@keyframes loading-bar{
+    0%{
+        transform: scaleX(0);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+}
+@keyframes pagein-blue {
+    0%{
+        transform: scaleX(1) translateX(100%);
+    }
+    25%{
+        transform: scaleX(1) translateX(0);
+    }
+    100%{
+        transform: scaleX(0) translateX(-100%);
+    }
+}
+@keyframes pagein-purple {
+    0%{
+        transform: scaleX(1) translateX(100%);
+    }
+    50%{
+        transform: scaleX(0) translateX(-100%);
+    }
+}
 .container{
     width: 500px;
     height: fit-content;
