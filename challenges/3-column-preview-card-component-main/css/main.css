@@ -1,0 +1,159 @@
+:root {
+  --orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --paragraphs: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
+  --ff-P: 'Lexend Deca';
+  --ff-t: 'Big Shoulders Display';
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  font-size: 0.97rem;
+  font-family: var(--ff-P);
+}
+
+.btn {
+  background: var(--very-light-gray);
+  border: none;
+  padding: .8em 2rem;
+  border-radius: 5em;
+}
+
+.btn:hover, .btn:focus {
+  outline: 2px solid white;
+}
+
+@media (min-width: 475px) {
+  .btn {
+    margin-top: 2.5em;
+  }
+}
+
+h1 {
+  font-family: var(--ff-t);
+  font-size: 2.5em;
+  text-transform: uppercase;
+  color: var(--very-light-gray);
+}
+
+p {
+  color: var(--paragraphs);
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 5em;
+  background: var(--very-light-gray);
+}
+
+.cards-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+  background: white;
+  width: 20rem;
+  height: 85rem;
+  border-radius: .5em;
+  overflow: hidden;
+}
+
+@media (min-width: 475px) {
+  .cards-container {
+    -ms-grid-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+    width: 55rem;
+    height: 30rem;
+  }
+}
+
+.card-element {
+  padding: 2.5em;
+  height: 100%;
+}
+
+.card-element img {
+  margin-bottom: 2rem;
+}
+
+.card-element h1 {
+  margin-bottom: 2rem;
+}
+
+.card-element p {
+  margin-bottom: 2rem;
+  line-height: 1.5rem;
+  font-size: 15px;
+}
+
+.cars {
+  background: var(--orange);
+}
+
+.cars .btn {
+  color: var(--orange);
+}
+
+.cars .btn:hover, .cars .btn:focus {
+  background: var(--orange);
+  color: var(--very-light-gray);
+}
+
+.suvs {
+  background: var(--dark-cyan);
+}
+
+.suvs .btn {
+  color: var(--dark-cyan);
+}
+
+.suvs .btn:hover, .suvs .btn:focus {
+  background: var(--dark-cyan);
+  color: var(--very-light-gray);
+}
+
+.luxs {
+  background: var(--very-dark-cyan);
+}
+
+.luxs .btn {
+  color: var(--very-dark-cyan);
+}
+
+.luxs .btn:hover, .luxs .btn:focus {
+  background: var(--very-dark-cyan);
+  color: var(--very-light-gray);
+}
+
+footer .attribution {
+  margin-top: 3em;
+  white-space: nowrap;
+}
+
+footer .attribution p {
+  font-size: .8rem;
+  color: var(--very-dark-cyan);
+}
+
+footer .attribution a {
+  font-size: .8rem;
+  color: var(--orange);
+  text-decoration: none;
+}
+
+footer .attribution a:hover, footer .attribution a:focus {
+  outline: 2px solid var(--orange);
+}
+/*# sourceMappingURL=main.css.map */
