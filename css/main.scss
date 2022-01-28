@@ -258,6 +258,7 @@ header img,
   width: 100%;
   height: 20rem;
   position: relative;
+  user-select: none;
 }
 
 .carousel__button {
@@ -345,13 +346,18 @@ header img,
   }
 }
 ///////////////////////HOVER
-.current--slide:hover,
-.current--slide .a:focus-visible {
+.current--slide:hover {
   height: 100%;
   margin: 0;
   padding: 0;
 }
-.current--slide:hover .slide-info-list {
+.carousel__track .carousel-focus {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.current--slide:hover .slide-info-list,
+.carousel-focus .slide-info-list {
   position: relative;
   transform: translateY(-5rem);
   width: 100%;

@@ -8,10 +8,27 @@ const rbtn = document.querySelector(".carousel__button--right");
 const slideWidth = slides[0].getBoundingClientRect().width;
 
 const arangeSlides = (slide, index) => {
+  ////////// Swipe
+  slide.addEventListener("touchstart", touchStart(index));
+  slide.addEventListener("touchend", touchEnd);
+  slide.addEventListener("touchmove", touchMove);
+  /////////// Swipe ^^^
   slide.style.left = slideWidth * index + "px";
 };
 slides.forEach(arangeSlides);
-
+////////// Swipe
+function touchStart(index) {
+  return function (event) {
+    console.log("start");
+  };
+}
+function touchEnd() {
+  console.log("end");
+}
+function touchMove() {
+  console.log("move");
+}
+//////// Swipe ^^
 const updateBtn = (slides, lbtn, rbtn, sIndex) => {
   if (sIndex === 0) {
     lbtn.classList.add("btn-hidden");
@@ -30,6 +47,15 @@ const updateBtn = (slides, lbtn, rbtn, sIndex) => {
   }
 };
 
+const updateHoverLeft = (currentSlide, prevSlide) => {
+  currentSlide.classList.remove("carousel-focus");
+  prevSlide.classList.add("carousel-focus");
+};
+const updateHoverRight = (currentSlide, nextSlide) => {
+  currentSlide.classList.remove("carousel-focus");
+  nextSlide.classList.add("carousel-focus");
+};
+
 const moveSlider = (currentSlide, targetSlide) => {
   track.style.transform = "translateX(-" + targetSlide.style.left + ")";
 
@@ -45,6 +71,7 @@ rbtn.addEventListener("click", (e) => {
   moveSlider(currentSlide, nextSlide);
   const nextIndex = slides.findIndex((slide) => slide === nextSlide);
   updateBtn(slides, lbtn, rbtn, nextIndex);
+  updateHoverRight(currentSlide, nextSlide);
 });
 lbtn.addEventListener("click", (e) => {
   const currentSlide = track.querySelector(".current--slide");
@@ -54,6 +81,7 @@ lbtn.addEventListener("click", (e) => {
   moveSlider(currentSlide, prevSlide);
   const prevIndex = slides.findIndex((slide) => slide === prevSlide);
   updateBtn(slides, lbtn, rbtn, prevIndex);
+  updateHoverLeft(currentSlide, prevSlide);
 });
 // ##################
 // Read More func ##################
@@ -65,3 +93,25 @@ rmBtn.addEventListener("click", () => {
   rmBtn.classList.add("rm-hidden");
 });
 // ###################
+// Observer #########
+const section = document.querySelectorAll("section");
+const carousel = document.querySelector(".carousel");
+const option = {
+  root: null,
+  threshold: 0,
+  rootMargin: "0px 0px -70px 0px",
+};
+const carouselObs = new IntersectionObserver(function (entries, carouselObs) {
+  entries.forEach((entry) => {
+    console.log(entry.isIntersecting);
+    if (!entry.isIntersecting) {
+      const currentSlide = document.querySelector(".current--slide");
+      currentSlide.classList.remove("carousel-focus");
+    } else if (entry.isIntersecting) {
+      const currentSlide = document.querySelector(".current--slide");
+      currentSlide.classList.add("carousel-focus");
+    }
+  });
+}, option);
+
+carouselObs.observe(carousel);

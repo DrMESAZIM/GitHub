@@ -369,6 +369,10 @@ header img,
   width: 100%;
   height: 20rem;
   position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .carousel__button {
@@ -495,14 +499,20 @@ header img,
   }
 }
 
-.current--slide:hover,
-.current--slide .a:focus-visible {
+.current--slide:hover {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.current--slide:hover .slide-info-list {
+.carousel__track .carousel-focus {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.current--slide:hover .slide-info-list,
+.carousel-focus .slide-info-list {
   position: relative;
   -webkit-transform: translateY(-5rem);
           transform: translateY(-5rem);
@@ -510,7 +520,8 @@ header img,
   margin: 0;
 }
 
-.current--slide:hover .slide-info-list .slide__information {
+.current--slide:hover .slide-info-list .slide__information,
+.carousel-focus .slide-info-list .slide__information {
   background: #000000e1;
   width: 100%;
   padding-top: 1em;
@@ -521,7 +532,8 @@ header img,
           transition-delay: 0.5s;
 }
 
-.current--slide:hover .slide-info-list .slide__description {
+.current--slide:hover .slide-info-list .slide__description,
+.carousel-focus .slide-info-list .slide__description {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
   -webkit-transition-delay: 1s;
@@ -529,13 +541,16 @@ header img,
 }
 
 .current--slide:hover .slide-info-list .slide__title::after,
-.current--slide:hover .slide-info-list .slide__title::before {
+.current--slide:hover .slide-info-list .slide__title::before,
+.carousel-focus .slide-info-list .slide__title::after,
+.carousel-focus .slide-info-list .slide__title::before {
   width: 30%;
   -webkit-transform: scaleX(0.4);
           transform: scaleX(0.4);
 }
 
-.current--slide:hover .slide-info-list .slide__title::after {
+.current--slide:hover .slide-info-list .slide__title::after,
+.carousel-focus .slide-info-list .slide__title::after {
   -webkit-transform-origin: right;
           transform-origin: right;
   right: 85%;
@@ -545,7 +560,8 @@ header img,
   width: 15%;
 }
 
-.current--slide:hover .slide-info-list .slide__title::before {
+.current--slide:hover .slide-info-list .slide__title::before,
+.carousel-focus .slide-info-list .slide__title::before {
   -webkit-transform-origin: left;
           transform-origin: left;
   left: 85%;
