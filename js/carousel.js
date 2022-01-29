@@ -89,7 +89,10 @@ rbtn.addEventListener("click", (e) => {
   moveSlider(currentSlide, nextSlide);
   const nextIndex = slides.findIndex((slide) => slide === nextSlide);
   updateBtn(slides, lbtn, rbtn, nextIndex);
-  updateHoverRight(currentSlide, nextSlide);
+  const html = document.querySelector("html");
+  if (html.clientWidth < 720) {
+    updateHoverRight(currentSlide, nextSlide);
+  }
 });
 lbtn.addEventListener("click", (e) => {
   const currentSlide = track.querySelector(".current--slide");
@@ -99,12 +102,23 @@ lbtn.addEventListener("click", (e) => {
   moveSlider(currentSlide, prevSlide);
   const prevIndex = slides.findIndex((slide) => slide === prevSlide);
   updateBtn(slides, lbtn, rbtn, prevIndex);
-  updateHoverLeft(currentSlide, prevSlide);
+  const html = document.querySelector("html");
+  if (html.clientWidth < 720) {
+    updateHoverLeft(currentSlide, prevSlide);
+  }
 });
 // ##################
 // Read More func ##################
 const rmText = document.querySelector(".read-more-text");
 const rmBtn = document.querySelector(".dots");
+
+window.onload = function () {
+  const html = document.querySelector("html");
+  if (html.clientWidth > 720) {
+    rmText.classList.remove("rm-hidden");
+    rmBtn.classList.add("rm-hidden");
+  }
+};
 
 rmBtn.addEventListener("click", () => {
   rmText.classList.remove("rm-hidden");
@@ -122,12 +136,16 @@ const option = {
 };
 const carouselObs = new IntersectionObserver(function (entries, carouselObs) {
   entries.forEach((entry) => {
-    if (!entry.isIntersecting) {
-      const currentSlide = document.querySelector(".current--slide");
-      currentSlide.classList.remove("carousel-focus");
-    } else if (entry.isIntersecting) {
-      const currentSlide = document.querySelector(".current--slide");
-      currentSlide.classList.add("carousel-focus");
+    const html = document.querySelector("html");
+    if (html.clientWidth < 720) {
+      if (!entry.isIntersecting) {
+        const currentSlide = document.querySelector(".current--slide");
+        currentSlide.classList.remove("carousel-focus");
+      } else if (entry.isIntersecting) {
+        const currentSlide = document.querySelector(".current--slide");
+        currentSlide.classList.add("carousel-focus");
+      }
+      return;
     }
   });
 }, option);
