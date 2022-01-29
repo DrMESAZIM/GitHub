@@ -234,21 +234,22 @@
             <div class="contact-left">
               <h1>Wanna know more? Contact me!</h1>
               <form action="">
-                <label for="name">With who I have the plesure?</label>
-                <input type="text" name="name" />
-                <label for="email">Where should I reply?</label>
-                <input type="email" name="email" />
-                <label for="message">Feel free to write anything</label>
+                <label for="name" class="name">Your name</label>
+                <input type="text" id="name" />
+                <label for="email" class="email">Your email</label>
+                <input type="email" id="email" />
+                <label for="message" class="message">Your message</label>
                 <textarea
                   name="message"
                   id="message"
-                  cols="30"
-                  rows="10"
+                  cols="2"
+                  rows="1"
                 ></textarea>
               </form>
+              <button type="submit" class="submit">Send</button>
             </div>
             <div class="contact-right">
-              <img src="" alt="" />
+              <img src="img/contact.jpg" alt="" />
             </div>
           </div>
         </section>
@@ -256,9 +257,19 @@
     </div>
     <footer>
       <ul>
-        <li class="social-media"><img src="" alt="" /></li>
-        <li class="social-media"><img src="" alt="" /></li>
-        <li class="social-media"><img src="" alt="" /></li>
+        <li class="social-media">
+          <a href="https://www.frontendmentor.io/profile/Andrei-TC"
+            ><img src="img/fm.png" alt=""
+          /></a>
+        </li>
+        <li class="social-media">
+          <a href="https://github.com/Andrei-TC"
+            ><img src="img/2048px-Octicons-mark-github.svg.png" alt=""
+          /></a>
+        </li>
+        <a href="https://www.instagram.com/tiberius_andrei_/">
+          <li class="social-media"><img src="img/insta.png" alt="" /></li>
+        </a>
       </ul>
     </footer>
     <script src="js/carousel.js"></script>
