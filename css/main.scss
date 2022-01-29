@@ -9,7 +9,7 @@ $forth: #f8f8fe;
   width: 100%;
   position: fixed;
   pointer-events: none;
-  z-index: 10;
+  z-index: 9999;
   //second animations
   //second bar
   .anim--blue {
@@ -157,10 +157,19 @@ main {
     z-index: -9;
   }
 }
+.hero__container {
+  padding: 0.5rem;
+  padding-top: 3rem;
+}
 nav {
   height: 3rem;
+  position: absolute;
+  width: 100%;
+  max-width: 1200px;
+  top: 0;
   display: grid;
   align-items: center;
+  transition: 1s;
   .nav {
     display: flex;
     align-content: center;
@@ -172,12 +181,24 @@ nav {
     }
   }
 }
+
+.nav--fixed {
+  position: fixed;
+  background: $secondary;
+  z-index: 10;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  .nav li {
+    color: white;
+  }
+}
 header {
   position: relative;
-  padding: 0.5rem;
 }
 header h1 {
-  margin-top: 1rem;
   color: $primary;
   font-size: 3rem;
   line-height: 5rem;
@@ -642,3 +663,80 @@ header img,
   font-weight: bold;
   cursor: pointer;
 }
+/////////// About me //////////////
+
+.about-me {
+  background: white;
+  position: relative;
+  text-align: left;
+  margin-top: 7rem;
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  padding-inline: 1rem;
+  margin-inline: 1rem;
+  border-radius: 0.5rem;
+  h2 {
+    grid-area: title;
+    color: $primary;
+    font-weight: 500;
+    margin-bottom: 1.6rem;
+  }
+  p {
+    grid-area: text;
+    color: $third;
+    line-height: 2rem;
+  }
+}
+
+.ball__container {
+  position: relative;
+  background: $secondary;
+  width: 100%;
+  height: 0px;
+  top: -5rem;
+}
+.ball {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  background: $primary;
+  top: 0;
+  left: 2rem;
+  border-radius: 100%;
+  &::after {
+    content: "";
+    width: 19rem;
+    height: 3px;
+    position: absolute;
+    top: 0;
+    left: -1rem;
+    transform: rotate(-25deg);
+    background: $primary;
+  }
+}
+.ball__lines {
+  position: absolute;
+  width: 2rem;
+  height: 2px;
+  background: $third;
+  left: -3rem;
+  top: 3rem;
+  transform: rotate(-25deg);
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 2rem;
+    height: 2px;
+    background: $third;
+  }
+  &::before {
+    top: -1rem;
+    right: -1rem;
+  }
+  &::after {
+    top: 1rem;
+    right: -1rem;
+  }
+}
+////////////////////////

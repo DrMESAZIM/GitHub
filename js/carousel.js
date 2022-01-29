@@ -112,6 +112,7 @@ rmBtn.addEventListener("click", () => {
 });
 // ###################
 // Observer #########
+// Carousel ##########
 const section = document.querySelectorAll("section");
 const carousel = document.querySelector(".carousel");
 const option = {
@@ -130,5 +131,23 @@ const carouselObs = new IntersectionObserver(function (entries, carouselObs) {
     }
   });
 }, option);
-
 carouselObs.observe(carousel);
+// Header ##############
+const options = {
+  root: null,
+  threshold: 0,
+  rootMargin: "-10px 0px 0px 0px",
+};
+const nav = document.querySelector("nav");
+const heroCont = document.querySelector(".hero__container");
+
+const navObs = new IntersectionObserver(function (entries, navObs) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      nav.classList.remove("nav--fixed");
+    } else if (!entry.isIntersecting) {
+      nav.classList.add("nav--fixed");
+    }
+  });
+}, options);
+navObs.observe(heroCont);
