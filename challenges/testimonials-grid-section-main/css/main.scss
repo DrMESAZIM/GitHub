@@ -1,0 +1,21 @@
+//####### Primary ##########
+$moderate-violet: hsl(263, 55%, 52%);
+$v-d-grayish-blue: hsl(217, 19%, 35%);
+$v-d-blackish-blue: hsl(219, 29%, 14%);
+$white: hsl(0, 0%, 100%);
+//######## Neutral #########
+$l-gray: hsl(0, 0%, 81%);
+$l-grayish-blie: hsl(210, 46%, 95%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Barlow Semi Condensed";
+}
+ul {
+  list-style: none;
+}
+.card {
+  background: red;
+}
