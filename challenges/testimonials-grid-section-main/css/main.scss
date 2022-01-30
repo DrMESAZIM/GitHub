@@ -16,6 +16,191 @@ $l-grayish-blie: hsl(210, 46%, 95%);
 ul {
   list-style: none;
 }
+main {
+  background-color: $l-grayish-blie;
+  display: grid;
+  padding-block: 5rem;
+}
+h3,
+h5,
+p {
+  color: $white;
+}
+p {
+  opacity: 50%;
+}
+.grid {
+  display: grid;
+}
+.t__container {
+  width: 90%;
+  height: 100%;
+  justify-self: center;
+  align-self: center;
+}
+.testimonials {
+  grid-template-areas:
+    "daniel"
+    "jona"
+    "jane"
+    "patrick"
+    "kira";
+  gap: 2rem;
+}
 .card {
-  background: red;
+  padding: 1.8rem;
+  li:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
+
+.card--top {
+  display: flex;
+  align-content: center;
+  gap: 1rem;
+  transform: scale(0.95);
+  transform-origin: left;
+  h5 {
+    font-weight: 500;
+    font-size: 0.9rem;
+  }
+  p {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  img {
+    width: 35px;
+    height: 35px;
+    border-radius: 100%;
+  }
+}
+.title {
+  font-size: 2.15ch;
+}
+.quote--p {
+  opacity: 70%;
+  line-height: 1.3rem;
+  font-size: 13px;
+  letter-spacing: 0.025rem;
+}
+
+.daniel {
+  grid-area: daniel;
+  background-color: $moderate-violet;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background-image: url(../images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+  background-size: 105px 110px;
+  img {
+    outline: 2px solid rgba(255, 255, 255, 0.356);
+  }
+  .card--top h5 {
+    opacity: 80%;
+  }
+}
+.jona {
+  grid-area: jona;
+  background: $v-d-grayish-blue;
+  border-radius: 0.5rem;
+}
+.jean {
+  grid-area: jane;
+  border-radius: 0.5rem;
+  background: $white;
+  h3,
+  h5,
+  p {
+    color: $v-d-grayish-blue;
+  }
+}
+.patrick {
+  grid-area: patrick;
+  border-radius: 0.5rem;
+  background: $v-d-blackish-blue;
+  img {
+    outline: 1px solid $moderate-violet;
+  }
+}
+.kira {
+  grid-area: kira;
+  border-radius: 0.5rem;
+  background: $white;
+  h3,
+  h5,
+  p {
+    color: $v-d-grayish-blue;
+  }
+}
+.attribution {
+  background-color: $v-d-blackish-blue;
+  height: 5rem;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  .links {
+    list-style: none;
+    color: $white;
+    li {
+      margin: 0.5rem auto;
+    }
+    a {
+      text-decoration: none;
+      color: $moderate-violet;
+      &:hover,
+      &:focus-visible {
+        background: $white;
+        outline: 1px solid $moderate-violet;
+      }
+    }
+  }
+}
+@media (min-width: 520px) {
+  .t__container {
+    max-width: 1300px;
+    max-height: 650px;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    .title {
+      font-size: 1.25rem;
+    }
+  }
+  .testimonials {
+    grid-template-areas:
+      "daniel daniel jona kira"
+      "jane patrick patrick kira";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .daniel {
+    grid-area: daniel;
+    background-position: 80% 0;
+    background-size: 120px 120px;
+  }
+  .jean {
+    grid-area: jane;
+    .title {
+      font-size: 1.4rem;
+    }
+  }
+  .kira {
+    grid-area: kira;
+  }
+  .patrick {
+    grid-area: patrick;
+  }
+  .jona {
+    grid-area: jona;
+  }
+  .quote--p {
+    line-height: 1.7;
+    font-size: 0.8rem;
+    letter-spacing: 0.02rem;
+  }
 }
