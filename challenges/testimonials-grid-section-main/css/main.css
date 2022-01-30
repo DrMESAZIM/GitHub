@@ -43,7 +43,11 @@ p {
 }
 
 .testimonials {
-      grid-template-areas: "daniel" "jona" "jane" "patrick" "kira";
+      grid-template-areas: "daniel"
+ "jona"
+ "jane"
+ "patrick"
+ "kira";
   gap: 2rem;
 }
 
@@ -165,6 +169,7 @@ p {
 }
 
 .attribution {
+  position:absolute;
   background-color: #19212e;
   height: 5rem;
   bottom: 0;
@@ -212,7 +217,8 @@ p {
     font-size: 1.25rem;
   }
   .testimonials {
-        grid-template-areas: "daniel daniel jona kira" "jane patrick patrick kira";
+        grid-template-areas: "daniel daniel jona kira"
+ "jane patrick patrick kira";
     -ms-grid-columns: 1fr 1fr 1fr 1fr;
         grid-template-columns: 1fr 1fr 1fr 1fr;
     -ms-grid-rows: 1fr 1fr;
